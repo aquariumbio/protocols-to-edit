@@ -1,0 +1,20 @@
+{
+  "name": "Plasmid Stock",
+  "description": "A 1.5 mL tube containing purified plasmid DNA",
+  "min": 0,
+  "max": 1,
+  "handler": "sample_container",
+  "safety": "No safety information",
+  "clean up": "No cleanup information",
+  "data": "concentration:",
+  "vendor": "No vendor information",
+  "unit": "Plasmid",
+  "cost": 2.0,
+  "release method": "return",
+  "release description": "",
+  "image": "",
+  "prefix": "M20",
+  "rows": null,
+  "columns": null,
+  "sample_type": "Plasmid"
+}

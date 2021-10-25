@@ -1,0 +1,20 @@
+{
+  "name": "Yeast 100ml culture",
+  "description": "Culture for making a high volume of comp cells",
+  "min": 0,
+  "max": 1,
+  "handler": "sample_container",
+  "safety": "No safety information",
+  "clean up": "No cleanup information",
+  "data": "No data",
+  "vendor": "No vendor information",
+  "unit": "Yeast Strain",
+  "cost": 0.0,
+  "release method": "return",
+  "release description": "",
+  "image": "",
+  "prefix": "",
+  "rows": null,
+  "columns": null,
+  "sample_type": "Yeast Strain"
+}

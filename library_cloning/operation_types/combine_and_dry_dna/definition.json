@@ -1,0 +1,96 @@
+{
+  "name": "Combine and Dry DNA",
+  "parent_class": "OperationType",
+  "category": "Library Cloning",
+  "inputs": [
+    {
+      "name": "Plasmid",
+      "part": null,
+      "array": null,
+      "routing": "P",
+      "ftype": "sample",
+      "choices": null,
+      "required": null,
+      "allowable_field_types": [
+        {
+          "sample_type": "Fragment",
+          "object_type": "Fragment Stock"
+        },
+        {
+          "sample_type": "DNA Library",
+          "object_type": "Library Stock"
+        },
+        {
+          "sample_type": "Plasmid",
+          "object_type": "Plasmid Stock"
+        }
+      ]
+    },
+    {
+      "name": "Plasmid micrograms",
+      "part": null,
+      "array": null,
+      "routing": null,
+      "ftype": "number",
+      "choices": null,
+      "required": null,
+      "allowable_field_types": []
+    },
+    {
+      "name": "Insert",
+      "part": null,
+      "array": null,
+      "routing": "I",
+      "ftype": "sample",
+      "choices": null,
+      "required": null,
+      "allowable_field_types": [
+        {
+          "sample_type": "DNA Library",
+          "object_type": "Library Stock"
+        },
+        {
+          "sample_type": "Fragment",
+          "object_type": "Fragment Stock"
+        }
+      ]
+    },
+    {
+      "name": "Insert micrograms",
+      "part": null,
+      "array": null,
+      "routing": null,
+      "ftype": "number",
+      "choices": null,
+      "required": null,
+      "allowable_field_types": []
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Dried DNA",
+      "part": null,
+      "array": null,
+      "routing": "I",
+      "ftype": "sample",
+      "choices": null,
+      "required": null,
+      "allowable_field_types": [
+        {
+          "sample_type": "DNA Library",
+          "object_type": "Dried Fragment Mix"
+        },
+        {
+          "sample_type": "Fragment",
+          "object_type": "Fragment Stock"
+        },
+        {
+          "sample_type": "Plasmid",
+          "object_type": "Plasmid Stock"
+        }
+      ]
+    }
+  ],
+  "on_the_fly": null,
+  "user_id": 228
+}

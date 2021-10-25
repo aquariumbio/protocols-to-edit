@@ -1,0 +1,105 @@
+{
+  "name": "Plasmid",
+  "description": "A circular piece of double stranded DNA",
+  "field_types": [
+    {
+      "name": "Sequence",
+      "part": null,
+      "array": false,
+      "routing": null,
+      "ftype": "url",
+      "choices": null,
+      "required": true
+    },
+    {
+      "name": "Sequence Verification",
+      "part": null,
+      "array": false,
+      "routing": null,
+      "ftype": "url",
+      "choices": null,
+      "required": false
+    },
+    {
+      "name": "Bacterial Marker",
+      "part": null,
+      "array": false,
+      "routing": null,
+      "ftype": "string",
+      "choices": "Amp,Kan,Amp + Kan,Spec,Gen,Kan + Spec,Chlor,Tet,NA,Other",
+      "required": true
+    },
+    {
+      "name": "Yeast Marker",
+      "part": null,
+      "array": false,
+      "routing": null,
+      "ftype": "string",
+      "choices": "HIS,TRP,URA,LEU,NatMX,KanMX,HygMX,BleoMX,5FOA,NA,Other",
+      "required": false
+    },
+    {
+      "name": "Length",
+      "part": null,
+      "array": false,
+      "routing": null,
+      "ftype": "number",
+      "choices": null,
+      "required": true
+    },
+    {
+      "name": "Sequencing Primers",
+      "part": null,
+      "array": true,
+      "routing": null,
+      "ftype": "sample",
+      "choices": null,
+      "required": false
+    },
+    {
+      "name": "QC Primer1",
+      "part": null,
+      "array": false,
+      "routing": null,
+      "ftype": "sample",
+      "choices": null,
+      "required": false
+    },
+    {
+      "name": "QC Primer2",
+      "part": null,
+      "array": false,
+      "routing": null,
+      "ftype": "sample",
+      "choices": null,
+      "required": false
+    },
+    {
+      "name": "QC_length",
+      "part": null,
+      "array": false,
+      "routing": null,
+      "ftype": "number",
+      "choices": null,
+      "required": false
+    },
+    {
+      "name": "Transformation Temperature",
+      "part": null,
+      "array": false,
+      "routing": null,
+      "ftype": "number",
+      "choices": "37,30",
+      "required": false
+    },
+    {
+      "name": "Comp Cells",
+      "part": null,
+      "array": false,
+      "routing": null,
+      "ftype": "sample",
+      "choices": null,
+      "required": false
+    }
+  ]
+}

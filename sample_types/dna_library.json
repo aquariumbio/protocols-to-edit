@@ -1,0 +1,15 @@
+{
+  "name": "DNA Library",
+  "description": "A sample that contains a pool of DNA molecules with many unique sequences",
+  "field_types": [
+    {
+      "name": "Oligo Pool",
+      "part": null,
+      "array": false,
+      "routing": null,
+      "ftype": "sample",
+      "choices": null,
+      "required": false
+    }
+  ]
+}

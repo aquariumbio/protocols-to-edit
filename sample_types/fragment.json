@@ -1,0 +1,78 @@
+{
+  "name": "Fragment",
+  "description": "A linear double stranded piece of DNA from PCR or Restriction Digest",
+  "field_types": [
+    {
+      "name": "Sequence",
+      "part": null,
+      "array": false,
+      "routing": null,
+      "ftype": "url",
+      "choices": null,
+      "required": true
+    },
+    {
+      "name": "Length",
+      "part": null,
+      "array": false,
+      "routing": null,
+      "ftype": "number",
+      "choices": null,
+      "required": true
+    },
+    {
+      "name": "Template",
+      "part": null,
+      "array": false,
+      "routing": null,
+      "ftype": "sample",
+      "choices": null,
+      "required": false
+    },
+    {
+      "name": "Forward Primer",
+      "part": null,
+      "array": false,
+      "routing": null,
+      "ftype": "sample",
+      "choices": null,
+      "required": false
+    },
+    {
+      "name": "Reverse Primer",
+      "part": null,
+      "array": false,
+      "routing": null,
+      "ftype": "sample",
+      "choices": null,
+      "required": false
+    },
+    {
+      "name": "Restriction Enzyme(s)",
+      "part": null,
+      "array": false,
+      "routing": null,
+      "ftype": "string",
+      "choices": null,
+      "required": false
+    },
+    {
+      "name": "Yeast Marker",
+      "part": null,
+      "array": false,
+      "routing": null,
+      "ftype": "string",
+      "choices": null,
+      "required": false
+    },
+    {
+      "name": "Fragment Mix Array",
+      "part": null,
+      "array": true,
+      "routing": null,
+      "ftype": "sample",
+      "choices": null,
+      "required": false
+    }
+  ]
+}

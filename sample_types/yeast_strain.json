@@ -1,0 +1,123 @@
+{
+  "name": "Yeast Strain",
+  "description": "A strain of yeast distinguished from others by genomic or plasmid modifications",
+  "field_types": [
+    {
+      "name": "Parent",
+      "part": null,
+      "array": false,
+      "routing": null,
+      "ftype": "sample",
+      "choices": null,
+      "required": false
+    },
+    {
+      "name": "Integrant",
+      "part": null,
+      "array": false,
+      "routing": null,
+      "ftype": "sample",
+      "choices": null,
+      "required": false
+    },
+    {
+      "name": "Plasmid",
+      "part": null,
+      "array": false,
+      "routing": null,
+      "ftype": "sample",
+      "choices": null,
+      "required": false
+    },
+    {
+      "name": "Integrated Marker(s)",
+      "part": null,
+      "array": false,
+      "routing": null,
+      "ftype": "string",
+      "choices": null,
+      "required": false
+    },
+    {
+      "name": "Plasmid Marker(s)",
+      "part": null,
+      "array": false,
+      "routing": null,
+      "ftype": "string",
+      "choices": null,
+      "required": false
+    },
+    {
+      "name": "Mating Type",
+      "part": null,
+      "array": false,
+      "routing": null,
+      "ftype": "string",
+      "choices": "MATa,MATalpha,Diploid",
+      "required": true
+    },
+    {
+      "name": "QC Primer1",
+      "part": null,
+      "array": false,
+      "routing": null,
+      "ftype": "sample",
+      "choices": null,
+      "required": false
+    },
+    {
+      "name": "QC Primer2",
+      "part": null,
+      "array": false,
+      "routing": null,
+      "ftype": "sample",
+      "choices": null,
+      "required": false
+    },
+    {
+      "name": "QC_length",
+      "part": null,
+      "array": false,
+      "routing": null,
+      "ftype": "number",
+      "choices": "",
+      "required": false
+    },
+    {
+      "name": "Comp_cell_limit",
+      "part": null,
+      "array": false,
+      "routing": null,
+      "ftype": "string",
+      "choices": "Yes,No",
+      "required": false
+    },
+    {
+      "name": "Media",
+      "part": null,
+      "array": false,
+      "routing": null,
+      "ftype": "string",
+      "choices": null,
+      "required": false
+    },
+    {
+      "name": "Has this strain passed QC?",
+      "part": null,
+      "array": false,
+      "routing": null,
+      "ftype": "string",
+      "choices": "No,Yes",
+      "required": false
+    },
+    {
+      "name": "Haploids",
+      "part": null,
+      "array": true,
+      "routing": null,
+      "ftype": "sample",
+      "choices": null,
+      "required": false
+    }
+  ]
+}

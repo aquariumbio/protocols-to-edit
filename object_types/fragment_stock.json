@@ -1,0 +1,20 @@
+{
+  "name": "Fragment Stock",
+  "description": "Fragment stock in 1.5 mL tube, usually stored in M20 fridge.",
+  "min": 0,
+  "max": 1000,
+  "handler": "sample_container",
+  "safety": "No safety information",
+  "clean up": "No cleanup information",
+  "data": "No data",
+  "vendor": "No vendor information",
+  "unit": "Fragment",
+  "cost": 50.0,
+  "release method": "return",
+  "release description": "",
+  "image": "",
+  "prefix": "M20",
+  "rows": null,
+  "columns": null,
+  "sample_type": "Fragment"
+}

@@ -1,0 +1,56 @@
+{
+  "name": "High-Efficiency Comp Cells",
+  "parent_class": "OperationType",
+  "category": "Library Cloning",
+  "inputs": [
+    {
+      "name": "Yeast Culture",
+      "part": null,
+      "array": null,
+      "routing": "YS1",
+      "ftype": "sample",
+      "choices": null,
+      "required": null,
+      "allowable_field_types": [
+        {
+          "sample_type": "Yeast Strain",
+          "object_type": "Yeast 100ml culture"
+        }
+      ]
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Comp Cells 1",
+      "part": null,
+      "array": null,
+      "routing": "T1",
+      "ftype": "sample",
+      "choices": null,
+      "required": null,
+      "allowable_field_types": [
+        {
+          "sample_type": "Yeast Strain",
+          "object_type": "Yeast Competent Aliquot"
+        }
+      ]
+    },
+    {
+      "name": "Comp Cells 2",
+      "part": null,
+      "array": null,
+      "routing": "T2",
+      "ftype": "sample",
+      "choices": null,
+      "required": null,
+      "allowable_field_types": [
+        {
+          "sample_type": "Yeast Strain",
+          "object_type": "Yeast Competent Aliquot"
+        }
+      ]
+    }
+  ],
+  "on_the_fly": null,
+  "user_id": 293
+}

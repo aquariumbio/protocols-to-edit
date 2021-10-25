@@ -1,0 +1,20 @@
+{
+  "name": "Yeast Competent Aliquot",
+  "description": "Yeast Competent Aliquot",
+  "min": 0,
+  "max": 1000,
+  "handler": "sample_container",
+  "safety": "No safety information",
+  "clean up": "No cleanup information",
+  "data": "No data",
+  "vendor": "No vendor information",
+  "unit": "Yeast Strain",
+  "cost": 1.0,
+  "release method": "dispose",
+  "release description": "",
+  "image": "",
+  "prefix": "M80",
+  "rows": null,
+  "columns": null,
+  "sample_type": "Yeast Strain"
+}
