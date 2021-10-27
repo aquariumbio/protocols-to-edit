@@ -1,0 +1,76 @@
+{
+  "name": "Transform Cells",
+  "parent_class": "OperationType",
+  "category": "Cloning",
+  "inputs": [
+    {
+      "name": "Plasmid",
+      "part": false,
+      "array": false,
+      "routing": "P",
+      "ftype": "sample",
+      "choices": null,
+      "required": null,
+      "allowable_field_types": [
+        {
+          "sample_type": "Plasmid",
+          "object_type": "Gibson Reaction Result"
+        },
+        {
+          "sample_type": "Plasmid",
+          "object_type": "Ligation product"
+        },
+        {
+          "sample_type": "Plasmid",
+          "object_type": "Plasmid Stock"
+        },
+        {
+          "sample_type": "Plasmid",
+          "object_type": "1 ng/\u00c2\u00b5L Plasmid Stock"
+        },
+        {
+          "sample_type": "Plasmid",
+          "object_type": "DNA Mix"
+        },
+        {
+          "sample_type": "Plasmid",
+          "object_type": "Midiprep Stock"
+        }
+      ]
+    },
+    {
+      "name": "Comp Cells",
+      "part": true,
+      "array": false,
+      "routing": "C",
+      "ftype": "sample",
+      "choices": null,
+      "required": null,
+      "allowable_field_types": [
+        {
+          "sample_type": "E coli strain",
+          "object_type": "E. coli Comp Cell Batch"
+        }
+      ]
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Transformed E Coli",
+      "part": false,
+      "array": false,
+      "routing": "P",
+      "ftype": "sample",
+      "choices": null,
+      "required": null,
+      "allowable_field_types": [
+        {
+          "sample_type": "Plasmid",
+          "object_type": "Transformed E. coli Aliquot"
+        }
+      ]
+    }
+  ],
+  "on_the_fly": false,
+  "user_id": 143
+}

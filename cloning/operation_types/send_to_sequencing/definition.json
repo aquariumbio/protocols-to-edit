@@ -1,0 +1,72 @@
+{
+  "name": "Send to Sequencing",
+  "parent_class": "OperationType",
+  "category": "Cloning",
+  "inputs": [
+    {
+      "name": "Plasmid",
+      "part": false,
+      "array": false,
+      "routing": "P",
+      "ftype": "sample",
+      "choices": null,
+      "required": null,
+      "allowable_field_types": [
+        {
+          "sample_type": "Plasmid",
+          "object_type": "Plasmid Stock"
+        },
+        {
+          "sample_type": "Fragment",
+          "object_type": "Fragment Stock"
+        },
+        {
+          "sample_type": "Plasmid",
+          "object_type": "Maxiprep Stock"
+        },
+        {
+          "sample_type": "Plasmid",
+          "object_type": "Midiprep Stock"
+        }
+      ]
+    },
+    {
+      "name": "Sequencing Primer",
+      "part": false,
+      "array": false,
+      "routing": "SP",
+      "ftype": "sample",
+      "choices": null,
+      "required": null,
+      "allowable_field_types": [
+        {
+          "sample_type": "Primer",
+          "object_type": "Primer Aliquot"
+        }
+      ]
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Plasmid for Sequencing",
+      "part": true,
+      "array": false,
+      "routing": "P",
+      "ftype": "sample",
+      "choices": null,
+      "required": null,
+      "allowable_field_types": [
+        {
+          "sample_type": "Plasmid",
+          "object_type": "Sequencing Stripwell"
+        },
+        {
+          "sample_type": "Fragment",
+          "object_type": "Sequencing Stripwell"
+        }
+      ]
+    }
+  ],
+  "on_the_fly": false,
+  "user_id": 293
+}

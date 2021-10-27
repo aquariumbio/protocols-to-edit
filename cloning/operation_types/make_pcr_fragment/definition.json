@@ -1,0 +1,107 @@
+{
+  "name": "Make PCR Fragment",
+  "parent_class": "OperationType",
+  "category": "Cloning",
+  "inputs": [
+    {
+      "name": "Forward Primer",
+      "part": false,
+      "array": false,
+      "routing": "FP",
+      "ftype": "sample",
+      "choices": null,
+      "required": null,
+      "allowable_field_types": [
+        {
+          "sample_type": "Primer",
+          "object_type": "Primer Aliquot"
+        }
+      ]
+    },
+    {
+      "name": "Reverse Primer",
+      "part": false,
+      "array": false,
+      "routing": "RP",
+      "ftype": "sample",
+      "choices": null,
+      "required": null,
+      "allowable_field_types": [
+        {
+          "sample_type": "Primer",
+          "object_type": "Primer Aliquot"
+        }
+      ]
+    },
+    {
+      "name": "Template",
+      "part": false,
+      "array": false,
+      "routing": "T",
+      "ftype": "sample",
+      "choices": null,
+      "required": null,
+      "allowable_field_types": [
+        {
+          "sample_type": "Plasmid",
+          "object_type": "1 ng/\u00c2\u00b5L Plasmid Stock"
+        },
+        {
+          "sample_type": "Fragment",
+          "object_type": "Fragment Stock"
+        },
+        {
+          "sample_type": "Plasmid",
+          "object_type": "Plasmid Stock"
+        },
+        {
+          "sample_type": "Fragment",
+          "object_type": "1 ng/\u00c2\u00b5L Fragment Stock"
+        },
+        {
+          "sample_type": "Plasmid",
+          "object_type": "Unverified Plasmid Stock"
+        },
+        {
+          "sample_type": "Plasmid",
+          "object_type": "Gibson Reaction Result"
+        },
+        {
+          "sample_type": "DNA Library",
+          "object_type": "50X PCR Template"
+        },
+        {
+          "sample_type": "Fragment",
+          "object_type": "Unverified PCR Fragment"
+        },
+        {
+          "sample_type": "DNA Library",
+          "object_type": "Yeast Genome Prep"
+        },
+        {
+          "sample_type": "Fragment",
+          "object_type": "Fragment Gibson Reaction Result"
+        }
+      ]
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Fragment",
+      "part": true,
+      "array": false,
+      "routing": "F",
+      "ftype": "sample",
+      "choices": null,
+      "required": null,
+      "allowable_field_types": [
+        {
+          "sample_type": "Fragment",
+          "object_type": "Stripwell"
+        }
+      ]
+    }
+  ],
+  "on_the_fly": false,
+  "user_id": 293
+}
