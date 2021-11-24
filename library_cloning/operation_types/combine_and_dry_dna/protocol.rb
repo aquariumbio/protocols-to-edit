@@ -53,36 +53,21 @@ class Protocol
 
         # get input volumes
         show do
-            title "Estimate initial volumes of samples"
-            note "If there is insufficient volume of the samples the operation will terminate"
-
             # check the volumes of samples for all operations, and ensure they are sufficient
             operations.each { |op| op.temporary[:vol_P] = 1000*op.input(QUANTITY_P).val }
-            check_volumes [INPUT_P], :vol_P, :make_aliquots_from_stock, check_contam: true
+            check_volumes [INPUT_P], :vol_P, :not_enough_input, check_contam: true
             operations.each { |op| op.temporary[:vol_F] = 1000*op.input(QUANTITY_F).val }
-            check_volumes [INPUT_F], :vol_F, :make_aliquots_from_stock, check_contam: true
+            check_volumes [INPUT_F], :vol_F, :not_enough_input, check_contam: true
         end
 
         # error operations with too little material
-        if(!debug)
-            operations.each { |op|
-                if(op.temporary[:vol_P].to_f*(op.input(INPUT_P).item.get(:concentration).to_f) < 1000*op.input(QUANTITY_P).val)
-                    show {
-                        note "#{op.temporary[:vol_P].to_f*(op.input(INPUT_P).item.get(:concentration).to_f)} < #{1000*op.input(QUANTITY_P).val}"
-                        note "op.temporary[:vol_P].to_f=#{op.temporary[:vol_P]}"
-                        note "op.input(INPUT_P).item.get(:concentration).to_f=#{op.input(INPUT_P).item.get(:concentration)}"
-                    }
-                    op.error :not_enough_plasmid, "There was not enough volume of plasmid #{op.input(INPUT_P).item} for this Combine and Dry DNA operation."
-                elsif(op.temporary[:vol_F].to_f*(op.input(INPUT_F).item.get(:concentration).to_f) < 1000*op.input(QUANTITY_F).val)
-                    op.error :not_enough_insert, "There was not enough volume of insert #{op.input(INPUT_F).item} for this Combine and Dry DNA operation."
-                end
-            }
-        end
-        ops=operations.running
-        operations=ops
-        if(operations.length<1)
-            show { note "No operations running! Returning."}
-            return
+        show do
+            ops=operations.running
+            operations=ops
+            if(operations.length<1)
+                note "No operations running! Returning."
+                return
+            end
         end
 
         show do
@@ -153,5 +138,25 @@ class Protocol
         return {}
 
     end # main
+
+    # This method takes inputs and tells the technician to discard any contaminated DNA stock items.
+    def not_enough_input(bad_ops_by_item, inputs)
+        if bad_ops_by_item.keys.select { |item| item.get(:contaminated) == 'Yes' }.any?
+            show do
+                title 'discard contaminated DNA'
+
+                note "discard the following contaminated DNA stock items: #{bad_ops_by_item.keys.select { |item| item.get(:contaminated) == 'Yes' }.map(&:id).to_sentence}"
+            end
+        end
+
+        show do
+            bad_ops_by_item.each do |item, _ops|
+                warning "Sample #{item.id} doesn't have enough volume. This operation has been pushed to error, please notify a lab manager."
+                bad_ops_by_item[item].each { |op| op.error :not_enough_volume, "Sample #{item.id} doesn't have enough volume. This operation has been pushed to error, please notify a lab manager." }
+                bad_ops_by_item.except! item
+                item.mark_as_deleted if item.get(:contaminated) == 'Yes'
+            end
+        end
+    end
 
 end # Protocol
