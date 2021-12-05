@@ -39,17 +39,17 @@ class Protocol
         measureConcentration("in",INPUT_P,operations)
         measureConcentration("in",INPUT_F,operations)
 
-        # invent concentrations in debug mode
-        if (debug)
-            operations.each { |op|
-                if(op.input(INPUT_P).item.get(:concentration).nil?)
-                    op.input(INPUT_P).item.associate :concentration, '100.0'
-                end
-                if(op.input(INPUT_F).item.get(:concentration).nil?)
-                    op.input(INPUT_F).item.associate :concentration, '200.0'
-                end
-            }
-        end
+        # if it doesn't have a concentration, nanodrop them
+        ops_for_measurement = []
+        operations.each { |op|
+            if(op.input(INPUT_P).item.get(:concentration).nil?)
+                ops_for_measurement.push(op)
+            end
+            if(op.input(INPUT_F).item.get(:concentration).nil?)
+                ops_for_measurement.push(op)
+            end
+        }
+        measure_plasmid_stock(ops_for_measurement)
 
         # check the volumes of samples for all operations, and ensure they are sufficient
         operations.each { |op| op.temporary[:vol_P] = 1000*op.input(QUANTITY_P).val }
@@ -129,6 +129,38 @@ class Protocol
                 bad_ops_by_item.except! item
                 item.mark_as_deleted if item.get(:contaminated) == 'Yes'
             end
+        end
+    end
+
+    # takes in array of operations and asks the technician
+    # to measure the concentrations of the input items.
+    #
+    # @param ops_for_measurement [Array] the ops that contain the items we are measuring
+    def measure_plasmid_stock ops_for_measurement
+        if ops_for_measurement.any?
+        conc_table = Proc.new { |ops|
+            ops.start_table
+            .input_item(INPUT)
+            .custom_input(:concentration, heading: "Concentration (ng/ul)", type: "number") { |op|
+                x = op.temporary[:concentration] || -1
+                x = rand(10..100) if debug
+                x
+            }
+            .validate(:concentration) { |op, v| v.between?(0,10000) }
+            .validation_message(:concentration) { |op, k, v| "Concentration must be non-zero!" }
+            .end_table.all
+        }
+
+        show_with_input_table(ops_for_measurement, conc_table) do
+            title "Measure concentrations"
+            note "The concentrations of some plasmid stocks are unknown."
+            check "Go to the nanodrop and measure the concentrations for the following items."
+            check "Write the concentration on the side of each tube"
+        end
+
+        ops_for_measurement.each do |op|
+            op.input(INPUT).item.associate :concentration, op.temporary[:concentration]
+        end
         end
     end
 
