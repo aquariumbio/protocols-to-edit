@@ -133,6 +133,7 @@ class Protocol
     # takes in array of operations and asks the technician
     # to measure the concentrations of the input items.
     #
+    # @param input [String] the input that needs to be nanodropped
     # @param ops_for_measurement [Array] the ops that contain the items we are measuring
     def measure_plasmid_stock(input, ops_for_measurement)
         if ops_for_measurement.any?
