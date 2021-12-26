@@ -1,0 +1,25 @@
+{
+  "name": "HomeworkProtocol",
+  "parent_class": "OperationType",
+  "category": "Tutorial",
+  "inputs": [
+    {
+      "name": "Fragment Stock",
+      "part": null,
+      "array": null,
+      "routing": "fragment",
+      "ftype": "sample",
+      "choices": null,
+      "required": null,
+      "allowable_field_types": [
+        {
+          "sample_type": "Fragment",
+          "object_type": "Fragment Stock"
+        }
+      ]
+    }
+  ],
+  "outputs": [],
+  "on_the_fly": null,
+  "user_id": 377
+}
